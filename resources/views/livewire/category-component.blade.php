@@ -14,7 +14,8 @@
                     <div class="col-lg-9">
                         <div class="shop-product-fillter">
                             <div class="totall-product">
-                                <p> We found <strong class="text-brand">{{ $products->total() }}</strong> items for you!
+                                <p> We found <strong class="text-brand">{{ $products->total() }}</strong> items for you
+                                    from category {{ $category_name }}!
                                 </p>
                             </div>
                             <div class="sort-by-product-area">
@@ -63,8 +64,8 @@
                                                     href="#"
                                                     wire:click.prevent="changeOrderBy('Price: High to Low')">Price: High
                                                     to Low</a></li>
-                                            <li><a class="{{ $orderBy == 'By newness' ? 'active' : '' }}" href="#"
-                                                    wire:click.prevent="changeOrderBy('By newness')">By
+                                            <li><a class="{{ $orderBy == 'By newness' ? 'active' : '' }}"
+                                                    href="#" wire:click.prevent="changeOrderBy('By newness')">By
                                                     newness</a></li>
                                         </ul>
                                     </div>
@@ -101,9 +102,12 @@
                                         </div>
                                         <div class="product-content-wrap">
                                             <div class="product-category">
-                                                <a href="shop.html">Music</a>
+                                                <a
+                                                    href="{{ route('category.index', ['slug' => $category_slug]) }}">{{ $category_name }}</a>
                                             </div>
-                                            <h2><a href="product-details.html">{{ $product->name }}</a></h2>
+                                            <h2><a
+                                                    href="{{ route('product.details', ['slug' => $product->slug]) }}">{{ $product->name }}</a>
+                                            </h2>
                                             <div class="rating-result" title="90%">
                                                 <span>
                                                     <span>90%</span>
@@ -154,7 +158,7 @@
                             <h5 class="section-title style-1 mb-30 wow fadeIn animated">Category</h5>
                             <ul class="categories">
                                 @foreach ($categories as $category)
-                                    <li><a
+                                    <li><a class="{{ $category_name == $category->name ? 'active2' : '' }}"
                                             href="{{ route('category.index', ['slug' => $category->slug]) }}">{{ $category->name }}</a>
                                     </li>
                                 @endforeach
