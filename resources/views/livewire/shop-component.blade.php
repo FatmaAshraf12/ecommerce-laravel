@@ -3,7 +3,7 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow">Home</a>
+                    <a href="/" rel="nofollow">Home</a>
                     <span></span> Shop
                 </div>
             </div>
@@ -63,7 +63,7 @@
                                     <div class="product-cart-wrap mb-30">
                                         <div class="product-img-action-wrap">
                                             <div class="product-img product-img-zoom">
-                                                <a href="product-details.html">
+                                                <a href="{{ route('product.details', ['slug' => $product->slug]) }}">
                                                     <img class="default-img"
                                                         src="{{ asset('assets/imgs/shop/') }}/{{ $product->image }}-1.jpg"
                                                         alt="{{ $product->name }}">
@@ -117,7 +117,8 @@
                         </div>
                         <!--pagination-->
                         <div class="pagination-area mt-15 mb-sm-5 mb-lg-0">
-                            <nav aria-label="Page navigation example">
+                            {{ $products->links() }}
+                            {{--  <nav aria-label="Page navigation example">
                                 <ul class="pagination justify-content-start">
                                     <li class="page-item active"><a class="page-link" href="#">01</a></li>
                                     <li class="page-item"><a class="page-link" href="#">02</a></li>
@@ -127,7 +128,7 @@
                                     <li class="page-item"><a class="page-link" href="#"><i
                                                 class="fi-rs-angle-double-small-right"></i></a></li>
                                 </ul>
-                            </nav>
+                            </nav> --}}
                         </div>
                     </div>
                     <div class="col-lg-3 primary-sidebar sticky-sidebar">
