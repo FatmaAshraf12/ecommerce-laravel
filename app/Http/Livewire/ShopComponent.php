@@ -48,4 +48,10 @@ class ShopComponent extends Component
         session()->flash('success_message','Item Added To Cart');
         return redirect()->route('cart');
     }
+    
+    public function add_to_wishlist($product_id,$product_name,$product_price){
+        Cart::instance('wishlist')->add($product_id,$product_name,1,$product_price)->associate('\App\Models\Product');
+        session()->flash('success_message','Item Added To Wishlist');
+        return redirect()->route('wishlist');
+    }
 }
