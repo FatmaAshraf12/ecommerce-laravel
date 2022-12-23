@@ -5,7 +5,7 @@
             <div class="container">
                 <div class="breadcrumb">
                     <a href="/" rel="nofollow">Home</a>
-                    <span></span> Add Category
+                    <span></span> Edit Category
                 </div>
             </div>
         </div>
@@ -19,10 +19,10 @@
                         @if (Session::has('message'))
                             <p>{{ Session::get('message') }}</p>
                         @endif
-                        <form wire:submit.prevent="store">
+                        <form wire:submit.prevent="update">
                             <div class="mb-3 mt-3">
                                 <label for="name">Name</label>
-                                <input type="text" name="name" wire:model="name" wire:keyup="generateSlug">
+                                <input type="text" name="name" wire:model="name" wire:keyup="generateSlug" value=>
                                 @error('name')
                                     <p>{{ $message }}</p>
                                 @enderror

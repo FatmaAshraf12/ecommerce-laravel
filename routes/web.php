@@ -14,6 +14,7 @@ use App\Http\Livewire\User\UserDashboardComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\Admin\AdminCategoriesComponent;
 use App\Http\Livewire\Admin\AdminAddCategoriesComponent;
+use App\Http\Livewire\Admin\AdminEditCategoryComponent;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -54,6 +55,7 @@ Route::middleware(['auth','authadmin'])->group(function () {
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
     Route::get('/admin/categories', AdminCategoriesComponent::class)->name('admin.categories');
     Route::get('/admin/categories/add', AdminAddCategoriesComponent::class)->name('admin.category.add');
+    Route::get('/admin/categories/edit/{category_id}', AdminEditCategoryComponent::class)->name('admin.category.edit');
 
 });
 

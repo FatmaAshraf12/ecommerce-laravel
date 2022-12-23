@@ -38,7 +38,13 @@
                                             <td>{{ $category->name }}</td>
                                             <td>{{ $category->slug }}</td>
                                             <td>{{ $category->created_at }}</td>
-                                            <td><button>delete</button></td>
+
+                                            <td><a style="color:red; margin-right:10px"
+                                                    wire:click.prevent="delete('{{ $category->id }}')">delete</a>
+                                                <a
+                                                    href="{{ route('admin.category.edit', ['category_id' => $category->id]) }}">edit</a>
+                                            </td>
+
                                         </tr>
                                     @endforeach
 
