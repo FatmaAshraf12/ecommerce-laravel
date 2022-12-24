@@ -364,11 +364,8 @@
                             <nav>
                                 <ul>
                                     <li><a class="active" href="{{ route('home.index') }}">Home </a></li>
-                                    <li><a href="about.html">About</a></li>
                                     <li><a href="{{ route('shop') }}">Shop</a></li>
 
-                                    <li><a href="blog.html">Blog </a></li>
-                                    <li><a href="contact.html">Contact</a></li>
 
                                     @auth
                                         @if (Auth::user()->role == 'user')
@@ -585,9 +582,7 @@
                     <!-- mobile menu end -->
                 </div>
                 <div class="mobile-header-info-wrap mobile-header-border">
-                    <div class="single-mobile-header-info mt-30">
-                        <a href="contact.html"> Our location </a>
-                    </div>
+
                     @auth
                         <div class="single-mobile-header-info">
                             {{ Auth::user()->name }}
@@ -663,7 +658,7 @@
                     <div class="col-lg-4 col-md-6">
                         <div class="widget-about font-md mb-md-5 mb-lg-0">
                             <div class="logo logo-width-1 wow fadeIn animated">
-                                <a href="index.html"><img src="{{ asset('assets/imgs/logo/logo.png') }}"
+                                <a href="/"><img src="{{ asset('assets/imgs/logo/logo.png') }}"
                                         alt="logo"></a>
                             </div>
                             <h5 class="mt-20 mb-10 fw-600 text-grey-4 wow fadeIn animated">Contact</h5>
@@ -693,16 +688,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-2 col-md-3">
-                        <h5 class="widget-title wow fadeIn animated">About</h5>
-                        <ul class="footer-list wow fadeIn animated mb-sm-5 mb-md-0">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Delivery Information</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Terms &amp; Conditions</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                        </ul>
-                    </div>
+
                     <div class="col-lg-2  col-md-3">
                         <h5 class="widget-title wow fadeIn animated">My Account</h5>
                         <ul class="footer-list wow fadeIn animated">
