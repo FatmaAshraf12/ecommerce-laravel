@@ -5,7 +5,7 @@ use App\Models\Category;
 use Livewire\Component;
 use Str;
 class AdminAddCategoriesComponent extends Component
-{
+{ 
     public $name;
     public $slug;
 

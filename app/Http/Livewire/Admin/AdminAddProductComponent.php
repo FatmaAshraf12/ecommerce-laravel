@@ -3,29 +3,29 @@
 namespace App\Http\Livewire\Admin;
 use App\Models\Category;
 use App\Models\Product;
-use Livewire\WithFileUploads;
-use Carbon\Carbon;
 use Livewire\Component;
+use Livewire\WithFileUploads;
 use Str;
-
-class AdminEditCategoryComponent extends Component
+use Carbon\Carbon;
+class AdminAddProductComponent extends Component
 {
+    use WithFileUploads;
+    public $name , $slug , $short_description , $description , $sku , $regular_price , $sale_price ,
+    $stock_status ='instock' , $featured = 0 , $quantity , $image , $images , $category_id;
 
-    public $category_id;
-    public $name;
-    public $slug;
-
-    public function mount($category_id){
-        $category = Category::find($category_id);
-        $this->category_id = $category_id;
-        $this->name = $category ->name;
-        $this->slug = $category ->slug;
+    public function render()
+    {
+        $categories = Category::orderBy('name','ASC')->get();
+        return view('livewire.admin.admin-add-product-component',['categories'=>$categories]);
     }
-    public function generateSlug(){
+
+    public function generateSlug()
+    {
         $this->slug= Str::slug($this->name);
     }
 
-    public function update($id){
+    public function store()
+    {
         $this->validate([
             'name'=>'required|unique:products',
             'slug'=>'required|unique:products',
@@ -35,7 +35,7 @@ class AdminEditCategoryComponent extends Component
             'quantity'=>'required'
         ]);
 
-        $product = Product::find($id);
+        $product = new Product();
         $product->name = $this->name;
         $product->slug = $this->slug;
         $product->short_description = $this->short_description;
@@ -55,13 +55,5 @@ class AdminEditCategoryComponent extends Component
         $product->save();
 
         session()->flash('message','Product has been added');
-
-    }
-
-
-
-    public function render()
-    {
-        return view('livewire.admin.admin-edit-category-component');
     }
 }

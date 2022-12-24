@@ -7,9 +7,8 @@ use Livewire\WithPagination;
 use App\Models\Category;
 
 class AdminCategoriesComponent extends Component
-{use WithPagination;
-
-
+{
+    use WithPagination;
 
     public function render()
     {
