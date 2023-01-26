@@ -6,7 +6,7 @@ use Livewire\Component;
 use App\Models\Product;
 use App\Models\Category;
 use Cart;
-
+ 
 class HomeComponent extends Component
 {
     public function render()

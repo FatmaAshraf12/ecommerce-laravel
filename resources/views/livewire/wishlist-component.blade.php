@@ -34,7 +34,7 @@
                                         @foreach (Cart::instance('wishlist')->content() as $item)
                                             <tr>
                                                 <td class="image product-thumbnail"><img
-                                                        src="{{ asset('assets/imgs/shop/') }}/{{ $item->model->image }}-1.jpg"
+                                                        src="{{ asset('assets/imgs/shop/') }}/{{ $item->model->image }}"
                                                         alt="#"></td>
                                                 <td class="product-des product-name">
                                                     <h5 class="product-name"><a

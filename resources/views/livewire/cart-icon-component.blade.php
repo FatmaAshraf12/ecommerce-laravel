@@ -1,5 +1,6 @@
 <div>
     <div class="header-action-icon-2">
+        ${{ Cart::subtotal() }}
         <a class="mini-cart-icon" href="{{ route('cart') }}">
             <img alt="Surfside Media" src="{{ asset('assets/imgs/theme/icons/icon-cart.svg') }}">
             @if (Cart::count() > 0)
@@ -13,7 +14,7 @@
                         <div class="shopping-cart-img">
                             <a href="{{ route('product.details', ['slug' => $item->model->slug]) }}"><img
                                     alt="{{ $item->model->name }}"
-                                    src="{{ asset('assets/imgs/shop/') }}/{{ $item->model->image }}-1.jpg"></a>
+                                    src="{{ asset('assets/imgs/shop/') }}/{{ $item->model->image }}"></a>
                         </div>
                         <div class="shopping-cart-title">
                             <h4><a
@@ -34,7 +35,7 @@
                 </div>
                 <div class="shopping-cart-button">
                     <a href="{{ route('cart') }}" class="outline">View cart</a>
-                    <a href="checkout.html">Checkout</a>
+                    <a href="{{ route('checkout') }}">Checkout</a>
                 </div>
             </div>
         </div>

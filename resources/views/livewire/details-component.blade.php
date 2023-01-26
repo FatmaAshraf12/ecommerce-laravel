@@ -21,11 +21,11 @@
                                         <!-- MAIN SLIDES -->
                                         <div class="product-image-slider">
                                             <figure class="border-radius-10">
-                                                <img src="{{ asset('assets/imgs/shop/') }}/{{ $product->image }}-1.jpg"
+                                                <img src="{{ asset('assets/imgs/shop/') }}/{{ $product->image }}"
                                                     alt="product image">
                                             </figure>
                                             <figure class="border-radius-10">
-                                                <img src="{{ asset('assets/imgs/shop/') }}/{{ $product->image }}-2.jpg"
+                                                <img src="{{ asset('assets/imgs/shop/') }}/{{ $product->image }}"
                                                     alt="product image">
                                             </figure>
 
@@ -34,11 +34,11 @@
                                         <!-- THUMBNAILS -->
                                         <div class="slider-nav-thumbnails pl-15 pr-15">
                                             <div>
-                                                <img src="{{ asset('assets/imgs/shop/') }}/{{ $product->image }}-1.jpg"
+                                                <img src="{{ asset('assets/imgs/shop/') }}/{{ $product->image }}"
                                                     alt="product image">
                                             </div>
                                             <div>
-                                                <img src="{{ asset('assets/imgs/shop/') }}/{{ $product->image }}-2.jpg"
+                                                <img src="{{ asset('assets/imgs/shop/') }}/{{ $product->image }}"
                                                     alt="product image">
                                             </div>
 

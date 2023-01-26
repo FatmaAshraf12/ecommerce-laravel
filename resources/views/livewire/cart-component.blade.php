@@ -4,7 +4,7 @@
         <div class="page-header breadcrumb-wrap">
             <div class="container">
                 <div class="breadcrumb">
-                    <a href="index.html" rel="nofollow">Home</a>
+                    <a href="/" rel="nofollow">Home</a>
                     <span></span> Shop
                     <span></span> Your Cart
                 </div>
@@ -36,7 +36,7 @@
                                         @foreach (Cart::content() as $item)
                                             <tr>
                                                 <td class="image product-thumbnail"><img
-                                                        src="{{ asset('assets/imgs/shop/') }}/{{ $item->model->image }}-1.jpg"
+                                                        src="{{ asset('assets/imgs/shop/') }}/{{ $item->model->image }}"
                                                         alt="#"></td>
                                                 <td class="product-des product-name">
                                                     <h5 class="product-name"><a
@@ -416,7 +416,8 @@
                                             </tbody>
                                         </table>
                                     </div>
-                                    <a href="checkout.html" class="btn "> <i class="fi-rs-box-alt mr-10"></i>
+                                    <a href="{{ route('checkout') }}" class="btn "> <i
+                                            class="fi-rs-box-alt mr-10"></i>
                                         Proceed To CheckOut</a>
                                 </div>
                             </div>

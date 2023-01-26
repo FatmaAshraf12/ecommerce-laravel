@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Livewire;
-
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Cart;
+
 class CartComponent extends Component
 {
     public function render()
@@ -33,5 +34,14 @@ class CartComponent extends Component
 
     public function clearAll(){
         Cart::destroy();
+    }
+
+
+    public function checkout()
+    {
+        if(Auth::check)
+            return redirect()->route('checkout');
+        else
+            return redirect()->route('login');
     }
 }
